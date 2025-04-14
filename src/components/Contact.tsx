@@ -55,7 +55,7 @@ const Contact = () => {
                 <Mail className="text-novapro-teal mt-1 mr-4 flex-shrink-0" size={24} />
                 <div>
                   <h4 className="text-lg font-medium mb-1">Email</h4>
-                  <p className="text-novapro-gray">info@novapro.tech</p>
+                  <p className="text-novapro-gray">dilik9727@gmail.com</p>
                 </div>
               </div>
               
@@ -63,7 +63,7 @@ const Contact = () => {
                 <Phone className="text-novapro-teal mt-1 mr-4 flex-shrink-0" size={24} />
                 <div>
                   <h4 className="text-lg font-medium mb-1">Phone</h4>
-                  <p className="text-novapro-gray">+1 (555) 123-4567</p>
+                  <p className="text-novapro-gray">+998 90 137 0997</p>
                 </div>
               </div>
               
@@ -71,7 +71,15 @@ const Contact = () => {
                 <MapPin className="text-novapro-teal mt-1 mr-4 flex-shrink-0" size={24} />
                 <div>
                   <h4 className="text-lg font-medium mb-1">Office</h4>
-                  <p className="text-novapro-gray">123 Innovation Way, Tech City, 12345</p>
+                  <p className="text-novapro-gray">2-й проезд Авиасозлар</p>
+                </div>
+              </div>
+              
+              <div className="flex items-start">
+                <Send className="text-novapro-teal mt-1 mr-4 flex-shrink-0" size={24} />
+                <div>
+                  <h4 className="text-lg font-medium mb-1">Telegram</h4>
+                  <p className="text-novapro-gray">amore9717</p>
                 </div>
               </div>
             </div>
@@ -153,3 +161,4 @@ const Contact = () => {
 };
 
 export default Contact;
+
