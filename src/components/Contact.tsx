@@ -1,9 +1,14 @@
+
 import { useState } from 'react';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
 import { useToast } from '@/components/ui/use-toast';
+import { useLanguageStore } from '../stores/useLanguageStore';
+import { useTranslation } from '../translations';
 
 const Contact = () => {
   const { toast } = useToast();
+  const { currentLanguage } = useLanguageStore();
+  const t = useTranslation(currentLanguage);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -18,7 +23,6 @@ const Contact = () => {
   
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // This would normally send the form data to a backend
     console.log('Form submitted:', formData);
     
     toast({
@@ -26,7 +30,6 @@ const Contact = () => {
       description: "We'll get back to you as soon as possible.",
     });
     
-    // Reset form
     setFormData({
       name: '',
       email: '',
@@ -39,15 +42,15 @@ const Contact = () => {
     <section id="contact" className="circuit-bg py-20 bg-novapro-lightdark">
       <div className="section-container">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="section-title">Contact Us</h2>
+          <h2 className="section-title">{t.contact.title}</h2>
           <p className="text-lg text-novapro-gray">
-            Ready to transform your business with automation? Get in touch with our team today.
+            {t.contact.subtitle}
           </p>
         </div>
         
         <div className="grid md:grid-cols-2 gap-12">
           <div>
-            <h3 className="section-subtitle mb-6">Get In Touch</h3>
+            <h3 className="section-subtitle mb-6">{t.contact.title}</h3>
             
             <div className="space-y-6">
               <div className="flex items-start">
@@ -84,9 +87,9 @@ const Contact = () => {
             </div>
             
             <div className="mt-8">
-              <h3 className="section-subtitle mb-4">Business Hours</h3>
-              <p className="text-novapro-gray mb-2">Monday - Sunday: 9:00 AM - 6:00 PM</p>
-              <p className="text-novapro-teal text-sm italic mt-2">24/7 Support Available</p>
+              <h3 className="section-subtitle mb-4">{t.contact.businessHours}</h3>
+              <p className="text-novapro-gray mb-2">{t.contact.workingHours}</p>
+              <p className="text-novapro-teal text-sm italic mt-2">{t.contact.support}</p>
             </div>
           </div>
           
@@ -94,7 +97,7 @@ const Contact = () => {
             <form onSubmit={handleSubmit} className="bg-novapro-dark p-8 rounded-lg shadow-lg">
               <div className="space-y-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium mb-2">Full Name</label>
+                  <label htmlFor="name" className="block text-sm font-medium mb-2">{t.contact.form.name}</label>
                   <input
                     type="text"
                     id="name"
@@ -107,7 +110,7 @@ const Contact = () => {
                 </div>
                 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium mb-2">Email Address</label>
+                  <label htmlFor="email" className="block text-sm font-medium mb-2">{t.contact.form.email}</label>
                   <input
                     type="email"
                     id="email"
@@ -120,7 +123,7 @@ const Contact = () => {
                 </div>
                 
                 <div>
-                  <label htmlFor="company" className="block text-sm font-medium mb-2">Company Name</label>
+                  <label htmlFor="company" className="block text-sm font-medium mb-2">{t.contact.form.company}</label>
                   <input
                     type="text"
                     id="company"
@@ -132,7 +135,7 @@ const Contact = () => {
                 </div>
                 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium mb-2">Your Message</label>
+                  <label htmlFor="message" className="block text-sm font-medium mb-2">{t.contact.form.message}</label>
                   <textarea
                     id="message"
                     name="message"
@@ -148,7 +151,7 @@ const Contact = () => {
                   type="submit" 
                   className="w-full cta-button flex items-center justify-center"
                 >
-                  Send Message <Send size={18} className="ml-2" />
+                  {t.contact.form.send} <Send size={18} className="ml-2" />
                 </button>
               </div>
             </form>
