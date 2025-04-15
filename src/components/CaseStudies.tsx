@@ -1,48 +1,31 @@
 
 import { Badge } from '@/components/ui/badge';
 import { ArrowRightIcon } from 'lucide-react';
+import { useLanguageStore } from '../stores/useLanguageStore';
+import { useTranslation } from '../translations';
 
 const CaseStudies = () => {
-  const caseStudies = [
-    {
-      title: "Manufacturing Process Optimization",
-      client: "MetalTech Industries",
-      description: "Implemented automated inventory tracking and production scheduling, reducing operational costs by 30% and improving delivery times by 45%.",
-      tags: ["1C", "Process Automation", "Manufacturing"],
-      image: "https://images.unsplash.com/photo-1581093458791-9f3c3700ef96?auto=format&fit=crop&q=80&w=2070"
-    },
-    {
-      title: "Retail Chain Management System",
-      client: "GlobeMart Retail",
-      description: "Developed an integrated solution for managing 50+ retail locations, centralizing inventory, sales data, and customer information.",
-      tags: ["MySklad", "Retail", "Inventory Management"],
-      image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=2070"
-    },
-    {
-      title: "HR Process Automation",
-      client: "Innovate Consulting Group",
-      description: "Streamlined recruitment, onboarding, and payroll processes, reducing administrative time by 65% and paperwork by 85%.",
-      tags: ["HR Solutions", "Recruitment", "Payroll"],
-      image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=2070"
-    }
-  ];
+  const { currentLanguage } = useLanguageStore();
+  const t = useTranslation(currentLanguage);
 
   return (
     <section id="case-studies" className="circuit-bg py-20 bg-novapro-lightdark">
       <div className="section-container">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="section-title">Case Studies</h2>
+          <h2 className="section-title">{t.caseStudies.title}</h2>
           <p className="text-lg text-novapro-gray">
-            Explore how our automation solutions have transformed businesses across various industries.
+            {t.caseStudies.description}
           </p>
         </div>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {caseStudies.map((study, index) => (
+          {t.caseStudies.studies.map((study, index) => (
             <div key={index} className="card group overflow-hidden flex flex-col h-full">
               <div className="h-48 overflow-hidden mb-6 -mx-6 -mt-6">
                 <img 
-                  src={study.image} 
+                  src={index === 0 ? "https://images.unsplash.com/photo-1581093458791-9f3c3700ef96?auto=format&fit=crop&q=80&w=2070" :
+                       index === 1 ? "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=2070" :
+                       "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=2070"} 
                   alt={study.title} 
                   className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
                 />
@@ -61,7 +44,7 @@ const CaseStudies = () => {
                   {study.title}
                 </h3>
                 
-                <p className="text-sm text-novapro-teal mb-3">Client: {study.client}</p>
+                <p className="text-sm text-novapro-teal mb-3">{t.caseStudies.client}: {study.client}</p>
                 
                 <p className="text-novapro-gray mb-4">
                   {study.description}
@@ -69,7 +52,7 @@ const CaseStudies = () => {
               </div>
               
               <a href="#" className="inline-flex items-center text-novapro-teal hover:underline mt-4">
-                Read full case study <ArrowRightIcon size={16} className="ml-2" />
+                {t.caseStudies.readFull} <ArrowRightIcon size={16} className="ml-2" />
               </a>
             </div>
           ))}
@@ -77,7 +60,7 @@ const CaseStudies = () => {
         
         <div className="text-center mt-12">
           <a href="#" className="secondary-button">
-            View all case studies
+            {t.caseStudies.viewAll}
           </a>
         </div>
       </div>

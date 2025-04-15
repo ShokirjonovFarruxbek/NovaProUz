@@ -1,3 +1,4 @@
+
 import { type LanguageCode } from '../config/languages';
 
 export const translations = {
@@ -85,6 +86,96 @@ export const translations = {
           description: 'Thorough analysis of existing processes to identify optimization opportunities and implement improvements.'
         }
       ]
+    },
+    products: {
+      title: "Our Products",
+      description: "We specialize in implementing and customizing industry-leading automation tools tailored to your business needs.",
+      features: "features",
+      learnMore: "Learn more",
+      products: [
+        {
+          name: "1C",
+          description: "Comprehensive business management software for accounting, inventory, HR, and more.",
+          features: ["Financial accounting", "Tax reporting", "Inventory management", "Personnel management"]
+        },
+        {
+          name: "Bitrix24",
+          description: "All-in-one collaboration platform with CRM, project management, and communication tools.",
+          features: ["CRM system", "Project management", "Document management", "Time tracking"]
+        },
+        {
+          name: "MySklad",
+          description: "Cloud-based inventory and order management system for online and retail businesses.",
+          features: ["Inventory control", "Order processing", "Sales analytics", "Mobile access"]
+        },
+        {
+          name: "HR Solutions",
+          description: "Automated human resources management systems for employee data, payroll, and recruitment.",
+          features: ["Employee database", "Payroll automation", "Recruitment management", "Performance evaluation"]
+        }
+      ]
+    },
+    caseStudies: {
+      title: "Case Studies",
+      description: "Explore how our automation solutions have transformed businesses across various industries.",
+      client: "Client",
+      readFull: "Read full case study",
+      viewAll: "View all case studies",
+      studies: [
+        {
+          title: "Manufacturing Process Optimization",
+          client: "MetalTech Industries",
+          description: "Implemented automated inventory tracking and production scheduling, reducing operational costs by 30% and improving delivery times by 45%.",
+          tags: ["1C", "Process Automation", "Manufacturing"]
+        },
+        {
+          title: "Retail Chain Management System",
+          client: "GlobeMart Retail",
+          description: "Developed an integrated solution for managing 50+ retail locations, centralizing inventory, sales data, and customer information.",
+          tags: ["MySklad", "Retail", "Inventory Management"]
+        },
+        {
+          title: "HR Process Automation",
+          client: "Innovate Consulting Group",
+          description: "Streamlined recruitment, onboarding, and payroll processes, reducing administrative time by 65% and paperwork by 85%.",
+          tags: ["HR Solutions", "Recruitment", "Payroll"]
+        }
+      ]
+    },
+    blog: {
+      title: "Our Blog",
+      description: "Free articles and insights on simplifying business operations and boosting revenue through automation.",
+      readMore: "Read more",
+      readTime: "min read",
+      viewAll: "View all articles",
+      posts: [
+        {
+          title: "5 Ways Automation Can Boost Your Company's Efficiency",
+          excerpt: "Discover how implementing automation in key business areas can significantly increase productivity and reduce operational costs.",
+          date: "April 10, 2025",
+          author: "Alex Morgan",
+          readTime: "5"
+        },
+        {
+          title: "Choosing the Right Automation Tools for Your Business",
+          excerpt: "A comprehensive guide to selecting automation solutions that align with your specific business needs and objectives.",
+          date: "March 28, 2025",
+          author: "Sophia Chen",
+          readTime: "7"
+        },
+        {
+          title: "The Future of Business Process Automation",
+          excerpt: "Exploring emerging trends and technologies that will shape the next generation of business automation systems.",
+          date: "March 15, 2025",
+          author: "Daniel Wilson",
+          readTime: "6"
+        }
+      ]
+    },
+    adBanner: {
+      specialOffer: "Special Offer:",
+      description: "Get a free automation consultation.",
+      action: "Contact us today!"
     }
   },
   ru: {
@@ -171,6 +262,96 @@ export const translations = {
           description: 'Тщательный анализ существующих процессов для выявления возможностей оптимизации.'
         }
       ]
+    },
+    products: {
+      title: "Наши продукты",
+      description: "Мы специализируемся на внедрении и настройке ведущих инструментов автоматизации, адаптированных к потребностям вашего бизнеса.",
+      features: "функции",
+      learnMore: "Узнать больше",
+      products: [
+        {
+          name: "1C",
+          description: "Комплексное программное обеспечение для управления бизнесом: бухгалтерия, инвентаризация, HR и многое другое.",
+          features: ["Финансовый учет", "Налоговая отчетность", "Управление запасами", "Управление персоналом"]
+        },
+        {
+          name: "Bitrix24",
+          description: "Универсальная платформа для совместной работы с CRM, управлением проектами и инструментами коммуникации.",
+          features: ["CRM система", "Управление проектами", "Управление документами", "Учет рабочего времени"]
+        },
+        {
+          name: "МойСклад",
+          description: "Облачная система управления запасами и заказами для онлайн и розничных предприятий.",
+          features: ["Контроль запасов", "Обработка заказов", "Аналитика продаж", "Мобильный доступ"]
+        },
+        {
+          name: "HR-решения",
+          description: "Автоматизированные системы управления персоналом для учета сотрудников, начисления заработной платы и найма.",
+          features: ["База данных сотрудников", "Автоматизация расчета зарплаты", "Управление наймом", "Оценка эффективности"]
+        }
+      ]
+    },
+    caseStudies: {
+      title: "Кейсы",
+      description: "Узнайте, как наши решения по автоматизации трансформировали бизнес в различных отраслях.",
+      client: "Клиент",
+      readFull: "Прочитать полный кейс",
+      viewAll: "Посмотреть все кейсы",
+      studies: [
+        {
+          title: "Оптимизация производственных процессов",
+          client: "MetalTech Industries",
+          description: "Внедрили автоматизированное отслеживание запасов и планирование производства, снизив операционные расходы на 30% и улучшив сроки поставок на 45%.",
+          tags: ["1C", "Автоматизация процессов", "Производство"]
+        },
+        {
+          title: "Система управления розничной сетью",
+          client: "GlobeMart Retail",
+          description: "Разработали интегрированное решение для управления более чем 50 розничными точками, централизовав запасы, данные о продажах и информацию о клиентах.",
+          tags: ["МойСклад", "Розница", "Управление запасами"]
+        },
+        {
+          title: "Автоматизация HR-процессов",
+          client: "Innovate Consulting Group",
+          description: "Оптимизировали процессы найма, адаптации и расчета заработной платы, сократив административное время на 65% и бумажную работу на 85%.",
+          tags: ["HR-решения", "Найм", "Расчет зарплаты"]
+        }
+      ]
+    },
+    blog: {
+      title: "Наш блог",
+      description: "Бесплатные статьи и аналитика об упрощении бизнес-операций и повышении дохода с помощью автоматизации.",
+      readMore: "Читать далее",
+      readTime: "мин. чтения",
+      viewAll: "Просмотреть все статьи",
+      posts: [
+        {
+          title: "5 способов повышения эффективности компании с помощью автоматизации",
+          excerpt: "Узнайте, как внедрение автоматизации в ключевых бизнес-областях может значительно повысить производительность и снизить операционные расходы.",
+          date: "10 апреля 2025",
+          author: "Алекс Морган",
+          readTime: "5"
+        },
+        {
+          title: "Выбор подходящих инструментов автоматизации для вашего бизнеса",
+          excerpt: "Комплексное руководство по выбору решений для автоматизации, соответствующих конкретным потребностям и целям вашего бизнеса.",
+          date: "28 марта 2025",
+          author: "София Чен",
+          readTime: "7"
+        },
+        {
+          title: "Будущее автоматизации бизнес-процессов",
+          excerpt: "Изучение новых тенденций и технологий, которые будут формировать следующее поколение систем автоматизации бизнеса.",
+          date: "15 марта 2025",
+          author: "Даниил Вильсон",
+          readTime: "6"
+        }
+      ]
+    },
+    adBanner: {
+      specialOffer: "Специальное предложение:",
+      description: "Получите бесплатную консультацию по автоматизации.",
+      action: "Свяжитесь с нами сегодня!"
     }
   },
   uz: {
@@ -257,6 +438,96 @@ export const translations = {
           description: 'Mavjud jarayonlarni optimallashtirish imkoniyatlarini aniqlash uchun batafsil tahlil.'
         }
       ]
+    },
+    products: {
+      title: "Bizning mahsulotlar",
+      description: "Biz biznes ehtiyojlaringizga moslashtirilgan yetakchi avtomatlashtirish vositalarini joriy qilish va sozlashga ixtisoslashganmiz.",
+      features: "xususiyatlari",
+      learnMore: "Batafsil ma'lumot",
+      products: [
+        {
+          name: "1C",
+          description: "Buxgalteriya, inventarizatsiya, kadrlar va boshqalar uchun kompleks biznes boshqaruv dasturi.",
+          features: ["Moliyaviy hisob", "Soliq hisoboti", "Inventarni boshqarish", "Xodimlarni boshqarish"]
+        },
+        {
+          name: "Bitrix24",
+          description: "CRM, loyiha boshqaruvi va aloqa vositalari bilan birlashtirilgan hammabop platforma.",
+          features: ["CRM tizimi", "Loyihalarni boshqarish", "Hujjatlarni boshqarish", "Ish vaqtini kuzatish"]
+        },
+        {
+          name: "MySklad",
+          description: "Onlayn va chakana savdo biznesi uchun bulutli inventar va buyurtma boshqaruvi tizimi.",
+          features: ["Inventar nazorati", "Buyurtmalarni qayta ishlash", "Savdo tahlili", "Mobil kirish"]
+        },
+        {
+          name: "HR yechimlari",
+          description: "Xodimlar ma'lumotlari, ish haqi va ishga qabul qilish uchun avtomatlashtirilgan kadrlar boshqaruvi tizimlari.",
+          features: ["Xodimlar bazasi", "Ish haqi avtomatizatsiyasi", "Ishga qabul qilishni boshqarish", "Samaradorlikni baholash"]
+        }
+      ]
+    },
+    caseStudies: {
+      title: "Loyihalar",
+      description: "Bizning avtomatlashtirish yechimlarimiz turli sohalardagi bizneslarni qanday o'zgartirganligi haqida bilib oling.",
+      client: "Mijoz",
+      readFull: "To'liq loyihani o'qish",
+      viewAll: "Barcha loyihalarni ko'rish",
+      studies: [
+        {
+          title: "Ishlab chiqarish jarayonlarini optimallashtirish",
+          client: "MetalTech Industries",
+          description: "Avtomatlashtirilgan inventar kuzatuvi va ishlab chiqarish rejalashtirish tizimlarini joriy etdik, operatsion xarajatlarni 30% ga kamaytirdik va yetkazib berish vaqtini 45% ga yaxshiladik.",
+          tags: ["1C", "Jarayonlarni avtomatlashtirish", "Ishlab chiqarish"]
+        },
+        {
+          title: "Chakana savdo tarmog'ini boshqarish tizimi",
+          client: "GlobeMart Retail",
+          description: "50 dan ortiq savdo nuqtalarini boshqarish uchun integratsiyalashgan yechim ishlab chiqdik, inventar, savdo ma'lumotlari va mijozlar ma'lumotlarini markazlashtirildi.",
+          tags: ["MySklad", "Chakana savdo", "Inventarni boshqarish"]
+        },
+        {
+          title: "HR jarayonlarini avtomatlashtirish",
+          client: "Innovate Consulting Group",
+          description: "Ishga qabul qilish, yangi xodimlarni tanishtirish va ish haqi jarayonlarini optimallashtirdik, ma'muriy vaqtni 65% ga va qog'oz ishlarini 85% ga kamaytirib.",
+          tags: ["HR yechimlari", "Ishga qabul qilish", "Ish haqi"]
+        }
+      ]
+    },
+    blog: {
+      title: "Bizning blog",
+      description: "Biznes operatsiyalarini soddalashtirish va avtomatlashtirish orqali daromadni oshirish bo'yicha bepul maqolalar va mulohazalar.",
+      readMore: "Batafsil o'qish",
+      readTime: "daqiqa o'qish",
+      viewAll: "Barcha maqolalarni ko'rish",
+      posts: [
+        {
+          title: "Avtomatlashtirish kompaniyangiz samaradorligini oshirishning 5 usuli",
+          excerpt: "Asosiy biznes sohalarida avtomatlashtirish qanday qilib unumdorlikni sezilarli darajada oshirishi va operatsion xarajatlarni kamaytirishini bilib oling.",
+          date: "2025 yil 10 aprel",
+          author: "Aleks Morgan",
+          readTime: "5"
+        },
+        {
+          title: "Biznesingiz uchun to'g'ri avtomatlashtirish vositalarini tanlash",
+          excerpt: "Biznesingizning o'ziga xos ehtiyojlari va maqsadlariga mos keladigan avtomatlashtirish yechimlarini tanlash bo'yicha keng qamrovli qo'llanma.",
+          date: "2025 yil 28 mart",
+          author: "Sofiya Chen",
+          readTime: "7"
+        },
+        {
+          title: "Biznes jarayonlarini avtomatlashtirishning kelajagi",
+          excerpt: "Biznes avtomatlashtirish tizimlarining keyingi avlodiga ta'sir qiluvchi yangi tendentsiyalar va texnologiyalarni o'rganish.",
+          date: "2025 yil 15 mart",
+          author: "Daniel Vilson",
+          readTime: "6"
+        }
+      ]
+    },
+    adBanner: {
+      specialOffer: "Maxsus taklif:",
+      description: "Bepul avtomatlashtirish konsultatsiyasini oling.",
+      action: "Bugun biz bilan bog'laning!"
     }
   }
 } as const;

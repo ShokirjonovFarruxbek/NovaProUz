@@ -1,9 +1,13 @@
 
 import { X } from 'lucide-react';
 import { useState } from 'react';
+import { useLanguageStore } from '../stores/useLanguageStore';
+import { useTranslation } from '../translations';
 
 const AdBanner = () => {
   const [isVisible, setIsVisible] = useState(true);
+  const { currentLanguage } = useLanguageStore();
+  const t = useTranslation(currentLanguage);
 
   const dismissBanner = () => {
     setIsVisible(false);
@@ -16,7 +20,7 @@ const AdBanner = () => {
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         <div className="flex-1 text-center">
           <p className="font-medium">
-            <span className="font-bold">Special Offer:</span> Get a free automation consultation. <a href="#contact" className="underline font-semibold">Contact us today!</a>
+            <span className="font-bold">{t.adBanner.specialOffer}</span> {t.adBanner.description} <a href="#contact" className="underline font-semibold">{t.adBanner.action}</a>
           </p>
         </div>
         <button onClick={dismissBanner} className="text-white hover:text-gray-200">

@@ -1,50 +1,30 @@
 
 import { CalendarIcon, UserIcon, ArrowRightIcon } from 'lucide-react';
+import { useLanguageStore } from '../stores/useLanguageStore';
+import { useTranslation } from '../translations';
 
 const Blog = () => {
-  const blogPosts = [
-    {
-      title: "5 Ways Automation Can Boost Your Company's Efficiency",
-      excerpt: "Discover how implementing automation in key business areas can significantly increase productivity and reduce operational costs.",
-      date: "April 10, 2025",
-      author: "Alex Morgan",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=2070",
-      readTime: "5 min read"
-    },
-    {
-      title: "Choosing the Right Automation Tools for Your Business",
-      excerpt: "A comprehensive guide to selecting automation solutions that align with your specific business needs and objectives.",
-      date: "March 28, 2025",
-      author: "Sophia Chen",
-      image: "https://images.unsplash.com/photo-1484417894907-623942c8ee29?auto=format&fit=crop&q=80&w=2070",
-      readTime: "7 min read"
-    },
-    {
-      title: "The Future of Business Process Automation",
-      excerpt: "Exploring emerging trends and technologies that will shape the next generation of business automation systems.",
-      date: "March 15, 2025",
-      author: "Daniel Wilson",
-      image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=2070",
-      readTime: "6 min read"
-    }
-  ];
+  const { currentLanguage } = useLanguageStore();
+  const t = useTranslation(currentLanguage);
 
   return (
     <section id="blog" className="circuit-bg py-20">
       <div className="section-container">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="section-title">Our Blog</h2>
+          <h2 className="section-title">{t.blog.title}</h2>
           <p className="text-lg text-novapro-gray">
-            Free articles and insights on simplifying business operations and boosting revenue through automation.
+            {t.blog.description}
           </p>
         </div>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {blogPosts.map((post, index) => (
+          {t.blog.posts.map((post, index) => (
             <div key={index} className="card group overflow-hidden flex flex-col h-full">
               <div className="h-48 overflow-hidden mb-6 -mx-6 -mt-6">
                 <img 
-                  src={post.image} 
+                  src={index === 0 ? "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=2070" :
+                       index === 1 ? "https://images.unsplash.com/photo-1484417894907-623942c8ee29?auto=format&fit=crop&q=80&w=2070" :
+                       "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=2070"} 
                   alt={post.title} 
                   className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
                 />
@@ -73,9 +53,9 @@ const Blog = () => {
               
               <div className="flex items-center justify-between mt-4">
                 <a href="#" className="inline-flex items-center text-novapro-teal hover:underline">
-                  Read more <ArrowRightIcon size={16} className="ml-2" />
+                  {t.blog.readMore} <ArrowRightIcon size={16} className="ml-2" />
                 </a>
-                <span className="text-sm text-novapro-gray">{post.readTime}</span>
+                <span className="text-sm text-novapro-gray">{post.readTime} {t.blog.readTime}</span>
               </div>
             </div>
           ))}
@@ -83,7 +63,7 @@ const Blog = () => {
         
         <div className="text-center mt-12">
           <a href="#" className="secondary-button">
-            View all articles
+            {t.blog.viewAll}
           </a>
         </div>
       </div>
