@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
 import { useToast } from '@/components/ui/use-toast';
@@ -86,8 +85,8 @@ const Contact = () => {
             
             <div className="mt-8">
               <h3 className="section-subtitle mb-4">Business Hours</h3>
-              <p className="text-novapro-gray mb-2">Monday - Friday: 9:00 AM - 6:00 PM</p>
-              <p className="text-novapro-gray">Saturday - Sunday: Closed</p>
+              <p className="text-novapro-gray mb-2">Monday - Sunday: 9:00 AM - 6:00 PM</p>
+              <p className="text-novapro-teal text-sm italic mt-2">24/7 Support Available</p>
             </div>
           </div>
           
@@ -161,4 +160,3 @@ const Contact = () => {
 };
 
 export default Contact;
-
