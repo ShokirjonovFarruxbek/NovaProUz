@@ -68,9 +68,9 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-6">Contact</h3>
             <ul className="space-y-3">
-              <li className="text-novapro-gray">123 Innovation Way, Tech City, 12345</li>
-              <li><a href="mailto:info@novapro.tech" className="text-novapro-gray hover:text-novapro-teal transition-colors duration-300">info@novapro.tech</a></li>
-              <li><a href="tel:+15551234567" className="text-novapro-gray hover:text-novapro-teal transition-colors duration-300">+1 (555) 123-4567</a></li>
+              <li className="text-novapro-gray">2-й проезд Авиасозлар</li>
+              <li><a href="mailto:info@novapro.tech" className="text-novapro-gray hover:text-novapro-teal transition-colors duration-300">dilik9727@gmail.com</a></li>
+              <li><a href="tel:+15551234567" className="text-novapro-gray hover:text-novapro-teal transition-colors duration-300">+998 90 137 0997</a></li>
             </ul>
           </div>
         </div>
