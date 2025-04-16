@@ -2,6 +2,7 @@
 import { CalendarIcon, UserIcon, ArrowRightIcon } from 'lucide-react';
 import { useLanguageStore } from '../stores/useLanguageStore';
 import { useTranslation } from '../translations';
+import { Link } from 'react-router-dom';
 
 const Blog = () => {
   const { currentLanguage } = useLanguageStore();
@@ -52,9 +53,12 @@ const Blog = () => {
               </div>
               
               <div className="flex items-center justify-between mt-4">
-                <a href="#" className="inline-flex items-center text-novapro-teal hover:underline">
+                <Link 
+                  to={`/blog/${index}`} 
+                  className="inline-flex items-center text-novapro-teal hover:underline"
+                >
                   {t.blog.readMore} <ArrowRightIcon size={16} className="ml-2" />
-                </a>
+                </Link>
                 <span className="text-sm text-novapro-gray">{post.readTime} {t.blog.readTime}</span>
               </div>
             </div>
@@ -62,9 +66,9 @@ const Blog = () => {
         </div>
         
         <div className="text-center mt-12">
-          <a href="#" className="secondary-button">
+          <Link to="/blog" className="secondary-button">
             {t.blog.viewAll}
-          </a>
+          </Link>
         </div>
       </div>
     </section>
