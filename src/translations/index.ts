@@ -1,4 +1,3 @@
-
 import { type LanguageCode } from '../config/languages';
 
 export const translations = {
@@ -10,6 +9,13 @@ export const translations = {
       caseStudies: 'Case Studies',
       blog: 'Blog',
       contact: 'Contact'
+    },
+    hero: {
+      title: 'Business Automation',
+      titleColored: 'Solutions',
+      subtitle: 'Optimize your business processes, reduce costs, and increase profits with our comprehensive automation services.',
+      ourServices: 'Our Services',
+      getInTouch: 'Get in Touch'
     },
     contact: {
       title: 'Contact Us',
@@ -187,6 +193,13 @@ export const translations = {
       blog: 'Блог',
       contact: 'Контакты'
     },
+    hero: {
+      title: 'Автоматизация бизнес-',
+      titleColored: 'процессов',
+      subtitle: 'Оптимизируйте бизнес-процессы, сократите расходы и увеличьте прибыль с помощью наших комплексных услуг автоматизации.',
+      ourServices: 'Наши услуги',
+      getInTouch: 'Связаться с нами'
+    },
     contact: {
       title: 'Свяжитесь с нами',
       subtitle: 'Готовы автоматизировать ваш бизнес? Свяжитесь с нашей командой сегодня.',
@@ -363,14 +376,21 @@ export const translations = {
       blog: 'Blog',
       contact: 'Aloqa'
     },
+    hero: {
+      title: 'Biznes avtomatlashtirish',
+      titleColored: 'yechimlari',
+      subtitle: 'Biznes jarayonlaringizni optimallashtiring, xarajatlarni kamaytiring va bizning keng qamrovli avtomatlashtirish xizmatlarimiz bilan foydangizni oshiring.',
+      ourServices: 'Bizning xizmatlar',
+      getInTouch: "Bog'lanish"
+    },
     contact: {
-      title: 'Biz bilan bogʻlaning',
-      subtitle: 'Biznesingizni avtomatlashtirish uchun tayyormisiz? Bugun bizning jamoamiz bilan bogʻlaning.',
+      title: 'Biz bilan bog\'laning',
+      subtitle: 'Biznesingizni avtomatlashtirish uchun tayyormisiz? Bugun bizning jamoamiz bilan bog\'laning.',
       businessHours: 'Ish vaqti',
       workingHours: 'Dushanba - Yakshanba: 9:00 - 18:00',
-      support: '24/7 Qoʻllab-quvvatlash mavjud',
+      support: '24/7 Qo\'llab-quvvatlash mavjud',
       form: {
-        name: 'Toʻliq ism',
+        name: 'To\'liq ism',
         email: 'Elektron pochta',
         company: 'Kompaniya nomi',
         message: 'Xabaringiz',
