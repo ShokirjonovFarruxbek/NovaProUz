@@ -13,7 +13,6 @@ import {
 import { Button } from "@/components/ui/button";
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import TelegramButton from '@/components/TelegramButton';
 
 const BlogPost = () => {
   const { id } = useParams();
@@ -51,7 +50,6 @@ const BlogPost = () => {
   return (
     <div className="min-h-screen bg-novapro-dark">
       <Navbar />
-      <TelegramButton />
       
       <div className="section-container py-12">
         <Button 

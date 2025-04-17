@@ -2,6 +2,7 @@
 import { Facebook, Twitter, Linkedin, Instagram, ArrowUp } from 'lucide-react';
 import { useLanguageStore } from '../stores/useLanguageStore';
 import { useTranslation } from '../translations';
+import { Separator } from './ui/separator';
 
 const Footer = () => {
   const { currentLanguage } = useLanguageStore();
@@ -17,8 +18,8 @@ const Footer = () => {
   return (
     <footer className="bg-novapro-dark pt-16 pb-8">
       <div className="section-container">
-        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-10 mb-16">
-          <div className="lg:col-span-2">
+        <div className="flex flex-col md:flex-row mb-16">
+          <div className="md:w-1/4 mb-10 md:mb-0">
             <div className="flex items-center mb-6">
               <img 
                 src="/lovable-uploads/47840e42-e6db-4407-b1e9-692066daa9e0.png" 
@@ -26,6 +27,15 @@ const Footer = () => {
                 className="h-10 w-10 mr-2"
               />
               <span className="text-novapro-beige text-xl font-poppins font-semibold">NovaPro</span>
+              <Separator className="h-8 mx-4 bg-novapro-gray/20" orientation="vertical" />
+              <div className="flex flex-col">
+                <img 
+                  src="/lovable-uploads/14c03911-45f5-40b6-a9e1-0769ea6328f4.png" 
+                  alt="IT Park Logo" 
+                  className="h-10 w-10"
+                />
+                <span className="text-xs text-novapro-gray mt-1">Резидент IT PARK</span>
+              </div>
             </div>
             <p className="text-novapro-gray mb-6">
               {currentLanguage === 'en' ? 'Empowering businesses through innovative automation solutions that streamline operations, enhance productivity, and drive sustainable growth.' :
@@ -48,7 +58,7 @@ const Footer = () => {
             </div>
           </div>
           
-          <div>
+          <div className="md:w-1/4 mb-10 md:mb-0">
             <h3 className="text-lg font-semibold mb-6">
               {currentLanguage === 'en' ? 'Quick Links' :
                currentLanguage === 'ru' ? 'Быстрые ссылки' :
@@ -64,7 +74,7 @@ const Footer = () => {
             </ul>
           </div>
           
-          <div>
+          <div className="md:w-1/4 mb-10 md:mb-0">
             <h3 className="text-lg font-semibold mb-6">
               {currentLanguage === 'en' ? 'Services' :
                currentLanguage === 'ru' ? 'Услуги' :
@@ -99,7 +109,7 @@ const Footer = () => {
             </ul>
           </div>
           
-          <div>
+          <div className="md:w-1/4">
             <h3 className="text-lg font-semibold mb-6">
               {currentLanguage === 'en' ? 'Contact' :
                currentLanguage === 'ru' ? 'Контакты' :
