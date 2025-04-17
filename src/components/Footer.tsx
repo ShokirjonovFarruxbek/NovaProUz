@@ -28,7 +28,7 @@ const Footer = () => {
               />
               <span className="text-novapro-beige text-xl font-poppins font-semibold">NovaPro</span>
               <Separator className="h-8 mx-4 bg-novapro-gray/20" orientation="vertical" />
-              <div className="flex flex-col items-center">
+              <div className="flex flex-col items-center justify-center">
                 <img 
                   src="/lovable-uploads/14c03911-45f5-40b6-a9e1-0769ea6328f4.png" 
                   alt="IT Park Logo" 
@@ -58,7 +58,7 @@ const Footer = () => {
             </div>
           </div>
           
-          <div className="md:w-1/5 mb-10 md:mb-0">
+          <div className="md:w-1/5 mb-10 md:mb-0 md:pl-8">
             <h3 className="text-lg font-semibold mb-6">
               {currentLanguage === 'en' ? 'Quick Links' :
                currentLanguage === 'ru' ? 'Быстрые ссылки' :

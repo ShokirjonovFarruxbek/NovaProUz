@@ -1,42 +1,11 @@
 
-import { useState } from 'react';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
-import { useToast } from '@/components/ui/use-toast';
 import { useLanguageStore } from '../stores/useLanguageStore';
 import { useTranslation } from '../translations';
 
 const Contact = () => {
-  const { toast } = useToast();
   const { currentLanguage } = useLanguageStore();
   const t = useTranslation(currentLanguage);
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    company: '',
-    message: ''
-  });
-  
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-  };
-  
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log('Form submitted:', formData);
-    
-    toast({
-      title: "Message sent!",
-      description: "We'll get back to you as soon as possible.",
-    });
-    
-    setFormData({
-      name: '',
-      email: '',
-      company: '',
-      message: ''
-    });
-  };
 
   return (
     <section id="contact" className="circuit-bg py-20 bg-novapro-lightdark">
@@ -94,67 +63,18 @@ const Contact = () => {
           </div>
           
           <div>
-            <form onSubmit={handleSubmit} className="bg-novapro-dark p-8 rounded-lg shadow-lg">
-              <div className="space-y-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium mb-2">{t.contact.form.name}</label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    className="w-full p-3 bg-novapro-lightdark border border-novapro-gray/30 rounded-md focus:outline-none focus:ring-2 focus:ring-novapro-teal text-novapro-beige"
-                    required
-                  />
-                </div>
-                
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium mb-2">{t.contact.form.email}</label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="w-full p-3 bg-novapro-lightdark border border-novapro-gray/30 rounded-md focus:outline-none focus:ring-2 focus:ring-novapro-teal text-novapro-beige"
-                    required
-                  />
-                </div>
-                
-                <div>
-                  <label htmlFor="company" className="block text-sm font-medium mb-2">{t.contact.form.company}</label>
-                  <input
-                    type="text"
-                    id="company"
-                    name="company"
-                    value={formData.company}
-                    onChange={handleChange}
-                    className="w-full p-3 bg-novapro-lightdark border border-novapro-gray/30 rounded-md focus:outline-none focus:ring-2 focus:ring-novapro-teal text-novapro-beige"
-                  />
-                </div>
-                
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium mb-2">{t.contact.form.message}</label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    rows={4}
-                    className="w-full p-3 bg-novapro-lightdark border border-novapro-gray/30 rounded-md focus:outline-none focus:ring-2 focus:ring-novapro-teal text-novapro-beige"
-                    required
-                  ></textarea>
-                </div>
-                
-                <button 
-                  type="submit" 
-                  className="w-full cta-button flex items-center justify-center"
-                >
-                  {t.contact.form.send} <Send size={18} className="ml-2" />
-                </button>
-              </div>
-            </form>
+            <div className="bg-novapro-dark p-2 rounded-lg shadow-lg h-full">
+              <iframe 
+                src="https://maps.google.com/maps?q=41.296079,69.344292&t=&z=16&ie=UTF8&iwloc=&output=embed" 
+                width="100%" 
+                height="100%" 
+                className="rounded-md min-h-[400px]"
+                frameBorder="0"
+                allowFullScreen
+                loading="lazy"
+                title="NovaPro Location"
+              ></iframe>
+            </div>
           </div>
         </div>
       </div>

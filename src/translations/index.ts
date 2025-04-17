@@ -190,7 +190,7 @@ export const translations = {
       services: 'Услуги',
       products: 'Продукты',
       caseStudies: 'Кейсы',
-      blog: 'Блог',
+      blog: 'Статья',
       contact: 'Контакты'
     },
     hero: {
@@ -332,7 +332,7 @@ export const translations = {
       ]
     },
     blog: {
-      title: "Наш блог",
+      title: "Наша Статья",
       description: "Бесплатные статьи и аналитика об упрощении бизнес-операций и повышении дохода с помощью автоматизации.",
       readMore: "Читать далее",
       readTime: "мин. чтения",
