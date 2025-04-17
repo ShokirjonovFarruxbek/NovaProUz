@@ -60,7 +60,7 @@ const BlogPost = () => {
           onClick={() => navigate('/')}
         >
           <ArrowLeftIcon className="mr-2 h-4 w-4" />
-          {t.nav.home}
+          {t.nav.about}
         </Button>
 
         <div className="bg-novapro-lightdark rounded-xl overflow-hidden max-w-4xl mx-auto shadow-lg">
