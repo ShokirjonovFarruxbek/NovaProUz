@@ -28,11 +28,11 @@ const Footer = () => {
               />
               <span className="text-novapro-beige text-xl font-poppins font-semibold">NovaPro</span>
               <Separator className="h-8 mx-4 bg-novapro-gray/20" orientation="vertical" />
-              <div className="flex flex-col">
+              <div className="flex flex-col items-center">
                 <img 
                   src="/lovable-uploads/14c03911-45f5-40b6-a9e1-0769ea6328f4.png" 
                   alt="IT Park Logo" 
-                  className="h-10 w-10"
+                  className="h-10 w-auto"
                 />
                 <span className="text-xs text-novapro-gray mt-1">Резидент IT PARK</span>
               </div>
@@ -58,7 +58,7 @@ const Footer = () => {
             </div>
           </div>
           
-          <div className="md:w-1/4 mb-10 md:mb-0">
+          <div className="md:w-1/5 mb-10 md:mb-0">
             <h3 className="text-lg font-semibold mb-6">
               {currentLanguage === 'en' ? 'Quick Links' :
                currentLanguage === 'ru' ? 'Быстрые ссылки' :
@@ -74,7 +74,7 @@ const Footer = () => {
             </ul>
           </div>
           
-          <div className="md:w-1/4 mb-10 md:mb-0">
+          <div className="md:w-1/5 mb-10 md:mb-0">
             <h3 className="text-lg font-semibold mb-6">
               {currentLanguage === 'en' ? 'Services' :
                currentLanguage === 'ru' ? 'Услуги' :
@@ -108,8 +108,48 @@ const Footer = () => {
               </a></li>
             </ul>
           </div>
+
+          <div className="md:w-1/5 mb-10 md:mb-0">
+            <h3 className="text-lg font-semibold mb-6">
+              {currentLanguage === 'en' ? 'Licenses' :
+               currentLanguage === 'ru' ? 'ЛИЦЕНЗИИ' :
+               'Litsenziyalar'}
+            </h3>
+            <ul className="space-y-3">
+              <li><a href="#" className="text-novapro-gray hover:text-novapro-teal transition-colors duration-300">
+                {currentLanguage === 'en' ? 'OnlinePBX Licenses' :
+                 currentLanguage === 'ru' ? 'Лицензии OnlinePBX' :
+                 'OnlinePBX Litsenziyalari'}
+              </a></li>
+              <li><a href="#" className="text-novapro-gray hover:text-novapro-teal transition-colors duration-300">
+                {currentLanguage === 'en' ? 'Bitrix24 Licenses' :
+                 currentLanguage === 'ru' ? 'Лицензии Битрикс24' :
+                 'Bitrix24 Litsenziyalari'}
+              </a></li>
+              <li><a href="#" className="text-novapro-gray hover:text-novapro-teal transition-colors duration-300">
+                {currentLanguage === 'en' ? 'Roistat Licenses' :
+                 currentLanguage === 'ru' ? 'Лицензии Roistat' :
+                 'Roistat Litsenziyalari'}
+              </a></li>
+              <li><a href="#" className="text-novapro-gray hover:text-novapro-teal transition-colors duration-300">
+                {currentLanguage === 'en' ? 'amoCRM Licenses' :
+                 currentLanguage === 'ru' ? 'Лицензии amoCRM' :
+                 'amoCRM Litsenziyalari'}
+              </a></li>
+              <li><a href="#" className="text-novapro-gray hover:text-novapro-teal transition-colors duration-300">
+                {currentLanguage === 'en' ? 'MySklad Tariffs' :
+                 currentLanguage === 'ru' ? 'Тарифы МойСклад' :
+                 'MySklad Tariflari'}
+              </a></li>
+              <li><a href="#" className="text-novapro-gray hover:text-novapro-teal transition-colors duration-300">
+                {currentLanguage === 'en' ? 'SIPUNI Licenses' :
+                 currentLanguage === 'ru' ? 'Лицензии SIPUNI' :
+                 'SIPUNI Litsenziyalari'}
+              </a></li>
+            </ul>
+          </div>
           
-          <div className="md:w-1/4">
+          <div className="md:w-1/5">
             <h3 className="text-lg font-semibold mb-6">
               {currentLanguage === 'en' ? 'Contact' :
                currentLanguage === 'ru' ? 'Контакты' :
@@ -120,19 +160,6 @@ const Footer = () => {
               <li><a href="mailto:info@novapro.tech" className="text-novapro-gray hover:text-novapro-teal transition-colors duration-300">dilik9727@gmail.com</a></li>
               <li><a href="tel:+998901370997" className="text-novapro-gray hover:text-novapro-teal transition-colors duration-300">+998 90 137 0997</a></li>
             </ul>
-          </div>
-        </div>
-        
-        {/* Licenses Section */}
-        <div className="border-t border-novapro-gray/20 pt-8 mb-8">
-          <h3 className="text-lg font-semibold mb-6 text-novapro-beige">ЛИЦЕНЗИИ</h3>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-            <a href="#" className="text-novapro-gray hover:text-novapro-teal transition-colors duration-300">Лицензии OnlinePBX</a>
-            <a href="#" className="text-novapro-gray hover:text-novapro-teal transition-colors duration-300">Лицензии Битрикс24</a>
-            <a href="#" className="text-novapro-gray hover:text-novapro-teal transition-colors duration-300">Лицензии Roistat</a>
-            <a href="#" className="text-novapro-gray hover:text-novapro-teal transition-colors duration-300">Лицензии amoCRM</a>
-            <a href="#" className="text-novapro-gray hover:text-novapro-teal transition-colors duration-300">Тарифы МойСклад</a>
-            <a href="#" className="text-novapro-gray hover:text-novapro-teal transition-colors duration-300">Лицензии SIPUNI</a>
           </div>
         </div>
         
