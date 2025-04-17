@@ -1,6 +1,5 @@
 
 import Navbar from '@/components/Navbar';
-import AdBanner from '@/components/AdBanner';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
 import Services from '@/components/Services';
@@ -14,7 +13,6 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-novapro-dark">
       <Navbar />
-      <AdBanner />
       <Hero />
       <About />
       <Services />

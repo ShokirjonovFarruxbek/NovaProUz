@@ -1,3 +1,4 @@
+
 import { type LanguageCode } from '../config/languages';
 
 export const translations = {
