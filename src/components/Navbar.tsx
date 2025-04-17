@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguageStore } from '../stores/useLanguageStore';
 import { useTranslation } from '../translations';
@@ -56,11 +56,18 @@ const Navbar = () => {
             <a href="#case-studies" className="text-novapro-beige hover:text-novapro-teal transition-colors duration-300">{t.nav.caseStudies}</a>
             <a href="#blog" className="text-novapro-beige hover:text-novapro-teal transition-colors duration-300">{t.nav.blog}</a>
             <a href="#contact" className="text-novapro-beige hover:text-novapro-teal transition-colors duration-300">{t.nav.contact}</a>
+            <a href="tel:+998901370997" className="flex items-center text-novapro-teal hover:text-novapro-beige transition-colors duration-300">
+              <Phone size={18} className="mr-2" />
+              +998 90 137 0997
+            </a>
             <LanguageSelector />
           </nav>
           
           {/* Mobile Navigation Button */}
           <div className="md:hidden flex items-center gap-4">
+            <a href="tel:+998901370997" className="text-novapro-teal">
+              <Phone size={20} />
+            </a>
             <LanguageSelector />
             <button onClick={toggleMenu} className="text-novapro-beige">
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -79,6 +86,7 @@ const Navbar = () => {
             <a href="#case-studies" className="block py-2 px-4 text-novapro-beige hover:text-novapro-teal" onClick={toggleMenu}>{t.nav.caseStudies}</a>
             <a href="#blog" className="block py-2 px-4 text-novapro-beige hover:text-novapro-teal" onClick={toggleMenu}>{t.nav.blog}</a>
             <a href="#contact" className="block py-2 px-4 text-novapro-beige hover:text-novapro-teal" onClick={toggleMenu}>{t.nav.contact}</a>
+            <a href="tel:+998901370997" className="block py-2 px-4 text-novapro-teal hover:text-novapro-beige" onClick={toggleMenu}>+998 90 137 0997</a>
           </div>
         </div>
       )}

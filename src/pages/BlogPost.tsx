@@ -11,6 +11,9 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { Button } from "@/components/ui/button";
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
+import TelegramButton from '@/components/TelegramButton';
 
 const BlogPost = () => {
   const { id } = useParams();
@@ -47,6 +50,9 @@ const BlogPost = () => {
 
   return (
     <div className="min-h-screen bg-novapro-dark">
+      <Navbar />
+      <TelegramButton />
+      
       <div className="section-container py-12">
         <Button 
           variant="outline" 
@@ -54,16 +60,16 @@ const BlogPost = () => {
           onClick={() => navigate('/')}
         >
           <ArrowLeftIcon className="mr-2 h-4 w-4" />
-          {t.blog.backHome}
+          {t.nav.home}
         </Button>
 
         <div className="bg-novapro-lightdark rounded-xl overflow-hidden max-w-4xl mx-auto shadow-lg">
-          <div className="h-[500px] overflow-hidden mb-8">
+          <div className="h-[600px] overflow-hidden mb-8">
             <Carousel className="w-full h-full">
               <CarouselContent>
                 {images.map((image, index) => (
                   <CarouselItem key={index}>
-                    <div className="h-[500px] w-full">
+                    <div className="h-[600px] w-full">
                       <img 
                         src={image}
                         alt={`${post.title} - Image ${index + 1}`}
@@ -102,6 +108,8 @@ const BlogPost = () => {
           </div>
         </div>
       </div>
+      
+      <Footer />
     </div>
   );
 };

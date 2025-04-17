@@ -17,8 +17,8 @@ const Footer = () => {
   return (
     <footer className="bg-novapro-dark pt-16 pb-8">
       <div className="section-container">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 mb-16">
-          <div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-10 mb-16">
+          <div className="lg:col-span-2">
             <div className="flex items-center mb-6">
               <img 
                 src="/lovable-uploads/47840e42-e6db-4407-b1e9-692066daa9e0.png" 
@@ -108,8 +108,21 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="text-novapro-gray">2-й проезд Авиасозлар</li>
               <li><a href="mailto:info@novapro.tech" className="text-novapro-gray hover:text-novapro-teal transition-colors duration-300">dilik9727@gmail.com</a></li>
-              <li><a href="tel:+15551234567" className="text-novapro-gray hover:text-novapro-teal transition-colors duration-300">+998 90 137 0997</a></li>
+              <li><a href="tel:+998901370997" className="text-novapro-gray hover:text-novapro-teal transition-colors duration-300">+998 90 137 0997</a></li>
             </ul>
+          </div>
+        </div>
+        
+        {/* Licenses Section */}
+        <div className="border-t border-novapro-gray/20 pt-8 mb-8">
+          <h3 className="text-lg font-semibold mb-6 text-novapro-beige">ЛИЦЕНЗИИ</h3>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+            <a href="#" className="text-novapro-gray hover:text-novapro-teal transition-colors duration-300">Лицензии OnlinePBX</a>
+            <a href="#" className="text-novapro-gray hover:text-novapro-teal transition-colors duration-300">Лицензии Битрикс24</a>
+            <a href="#" className="text-novapro-gray hover:text-novapro-teal transition-colors duration-300">Лицензии Roistat</a>
+            <a href="#" className="text-novapro-gray hover:text-novapro-teal transition-colors duration-300">Лицензии amoCRM</a>
+            <a href="#" className="text-novapro-gray hover:text-novapro-teal transition-colors duration-300">Тарифы МойСклад</a>
+            <a href="#" className="text-novapro-gray hover:text-novapro-teal transition-colors duration-300">Лицензии SIPUNI</a>
           </div>
         </div>
         
