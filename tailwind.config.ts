@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -66,9 +65,10 @@ export default {
         novapro: {
           dark: '#221F26',
           beige: '#E5E2D9',
-          teal: '#36B5AD',
+          teal: '#FFC900',
           gray: '#8E9196',
-          lightdark: '#2D2A33'
+          lightdark: '#2D2A33',
+          accent: '#FF8243'
         }
       },
       borderRadius: {

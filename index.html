@@ -1,18 +1,232 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Add GeoIP detection script -->
+    <script src="https://cdn.jsdelivr.net/npm/geoip-js@1.0.1/dist/geoip.min.js"></script>
+    
+    <!-- Enhanced country and language detection -->
+    <script type="text/javascript">
+      async function detectUserCountryAndRedirect() {
+        try {
+          // Get user's IP and country info
+          const response = await fetch('https://ipapi.co/json/');
+          const data = await response.json();
+          const country = data.country_code;
+          const path = window.location.pathname.toLowerCase();
+
+          // Skip redirect if already on language path
+          if (path.startsWith('/ru/') || path.startsWith('/uz/') || path.startsWith('/en/')) {
+            return;
+          }
+
+          // Country-based language redirect
+          switch(country) {
+            case 'UZ':
+              window.location.href = '/uz/';
+              break;
+            case 'RU':
+            case 'KZ':
+            case 'BY':
+            case 'KG':
+              window.location.href = '/ru/';
+              break;
+            default:
+              // Default to English for all other countries
+              window.location.href = '/en/';
+          }
+        } catch (error) {
+          console.error('Error detecting country:', error);
+          // Fallback to browser language if country detection fails
+          const userLang = navigator.language || navigator.userLanguage;
+          if (userLang.startsWith('ru')) {
+            window.location.href = '/ru/';
+          } else if (userLang.startsWith('uz')) {
+            window.location.href = '/uz/';
+          } else {
+            window.location.href = '/en/';
+          }
+        }
+      }
+
+      // Run country detection on page load
+      window.addEventListener('load', detectUserCountryAndRedirect);
+    </script>
+
+    <!-- Update existing language alternatives with country hints -->
+    <link rel="alternate" hreflang="en" href="https://novapro.com/en/" />
+    <link rel="alternate" hreflang="ru" href="https://novapro.com/ru/" data-countries="RU,KZ,BY,KG" />
+    <link rel="alternate" hreflang="uz" href="https://novapro.com/uz/" data-countries="UZ" />
+    <link rel="alternate" hreflang="x-default" href="https://novapro.com/en/" />
+
+    <!-- Enhanced Keywords for Services -->
+    <meta name="keywords" content="
+      NovaPro, business automation, B2B services,
+      MySklad, МойСклад, my sklad, мой склад, склад программа, 
+      1C, 1С, 1C Uzbekistan, 1С Узбекистан, 1C бухгалтерия,
+      Bitrix24, Битрикс24, CRM system, B24, 
+      автоматизация бизнеса, biznes avtomatlashtirish,
+      Tashkent, Ташкент, Toshkent,
+      ERP система, ERP tizimi, ERP system,
+      warehouse management, склад учет, omborxona boshqaruvi,
+      бухгалтерский учет, accounting software, buxgalteriya dasturi
+    "/>
+
+    <!-- Service-specific meta tags -->
+    <!-- MySklad -->
+    <meta name="mySklad-service" content="MySklad implementation, inventory management, warehouse automation, МойСклад внедрение"/>
+    <!-- 1C -->
+    <meta name="1C-service" content="1C integration, business accounting, enterprise management, 1С автоматизация"/>
+    <!-- Bitrix24 -->
+    <meta name="bitrix24-service" content="Bitrix24 setup, CRM implementation, business process automation, Битрикс24 внедрение"/>
+
+    <!-- Enhanced redirect script -->
+    <script type="text/javascript">
+      function handleServiceRedirect() {
+        const searchQuery = window.location.search.toLowerCase();
+        const path = window.location.pathname.toLowerCase();
+
+        // MySklad related searches
+        if (
+          searchQuery.includes('mysklad') || 
+          searchQuery.includes('мойсклад') || 
+          searchQuery.includes('sklad') || 
+          searchQuery.includes('warehouse') ||
+          searchQuery.includes('omborxona')
+        ) {
+          window.location.href = '/services/mysklad';
+        }
+
+        // 1C related searches
+        if (
+          searchQuery.includes('1c') || 
+          searchQuery.includes('1с') || 
+          searchQuery.includes('accounting') || 
+          searchQuery.includes('buxgalteriya')
+        ) {
+          window.location.href = '/services/1c';
+        }
+
+        // Bitrix24 related searches
+        if (
+          searchQuery.includes('bitrix') || 
+          searchQuery.includes('битрикс') || 
+          searchQuery.includes('crm') || 
+          searchQuery.includes('b24')
+        ) {
+          window.location.href = '/services/bitrix24';
+        }
+
+        // Language detection and redirect
+        const userLang = navigator.language || navigator.userLanguage;
+        if (path === '/' || path === '/index.html') {
+          if (userLang.startsWith('ru')) {
+            window.location.href = '/ru/';
+          } else if (userLang.startsWith('uz')) {
+            window.location.href = '/uz/';
+          }
+        }
+      }
+
+      // Run on page load and URL change
+      window.onload = handleServiceRedirect;
+      window.onpopstate = handleServiceRedirect;
+    </script>
+
+    <!-- Service-specific structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "NovaPro",
+      "url": "https://novapro.com",
+      "sameAs": [
+        "https://www.facebook.com/novapro",
+        "https://t.me/novapro",
+        "https://linkedin.com/company/novapro"
+      ],
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "MySklad Implementation",
+          "description": "Complete warehouse management and inventory control solutions"
+        },
+        {
+          "@type": "Offer",
+          "name": "1C Integration",
+          "description": "Full-scale business accounting and management systems"
+        },
+        {
+          "@type": "Offer",
+          "name": "Bitrix24 Solutions",
+          "description": "CRM and business process automation implementation"
+        }
+      ]
+    }
+    </script>
+
+    <!-- Language Alternatives -->
+    <link rel="alternate" hreflang="en" href="https://novapro.com/en/" />
+    <link rel="alternate" hreflang="ru" href="https://novapro.com/ru/" />
+    <link rel="alternate" hreflang="uz" href="https://novapro.com/uz/" />
+    <link rel="alternate" hreflang="x-default" href="https://novapro.com/" />
+
+    <!-- Multi-language Meta Tags -->
+    <!-- English -->
+    <meta name="description" content="NovaPro specializes in B2B business automation in Uzbekistan, offering CRM, ERP, and retail solutions using 1C, Bitrix24, and MySklad to streamline operations, reduce costs, and boost profitability." />
+    <!-- Russian -->
+     <meta name="description" lang="ru" content="NovaPro предлагает услуги автоматизации бизнеса для B2B-клиентов в Узбекистане, внедряя решения на базе 1С, Bitrix24 и МойСклад для оптимизации процессов, снижения издержек и увеличения прибыли." />
+    <!-- Uzbek -->
+     <meta name="description" lang="uz" content="NovaPro O‘zbekistonda B2B mijozlar uchun 1C, Bitrix24 va MySklad asosida CRM, ERP va chakana savdo yechimlarini joriy etib, biznes jarayonlarini avtomatlashtirish, xarajatlarni kamaytirish va daromadni oshirishga yordam beradi." />
+    <!-- Keywords for better search -->
+    <meta name="keywords" content="NovaPro, 1C, Bitrix24, MySklad, CRM, ERP, B2B, biznes avtomatlashtirish, Tashkent, avtomatlashtirish xizmatlari, MoySklad, 1С, Битрикс24, автоматизация, Узбекистан, бизнес-решения, бизнес jarayonlari, savdo avtomatlashtirish, CRM tizimi, ERP tizimi, chakana savdo, biznesni optimallashtirish, mijozlar bilan ishlash, biznes avtomatlashtirish xizmatlari" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://novapro.com" />
+
+    <!-- Service-specific redirects -->
+    <!-- <script type="text/javascript">
+      // Function to detect user language
+      function getUserLanguage() {
+        return navigator.language || navigator.userLanguage;
+      }
+
+      // Function to handle service-specific redirects
+      function handleServiceRedirect() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const searchQuery = urlParams.get('q') || '';
+        const userLang = getUserLanguage().toLowerCase();
+
+        // Service-specific redirects
+        if (searchQuery.toLowerCase().includes('mysklad') || 
+            searchQuery.toLowerCase().includes('мойсклад')) {
+          window.location.href = '/services/mysklad';
+        }
+
+        // Language-based redirects
+        if (userLang.startsWith('ru')) {
+          window.location.href = '/ru/';
+        } else if (userLang.startsWith('uz')) {
+          window.location.href = '/uz/';
+        }
+      }
+
+      // Run on page load
+      window.onload = handleServiceRedirect;
+    </script> -->
+
     <title>NovaPro - Automation Services for B2B Clients</title>
     <meta name="description" content="NovaPro provides automation services to B2B clients using tools like 1C, Bitrix24, and MySklad to optimize business processes, reduce costs, and increase profits." />
     <meta name="author" content="NovaPro" />
+    <meta name="google-site-verification" content="iUJceh71My4tyQ5_G-g3_DQSG3blzQtGe2QLhIetHZ8" />
 
     <!-- Open Graph / Facebook / Telegram -->
     <meta property="og:title" content="NovaPro - Automation Services for B2B Clients" />
     <meta property="og:description" content="Optimize business processes, reduce costs, and increase profits with NovaPro's automation services." />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="/lovable-uploads/47840e42-e6db-4407-b1e9-692066daa9e0.png" />
+    <meta property="og:image" content="/images/WebSiteDevelopmen.jpeg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:url" content="https://novapro.com" />
@@ -22,13 +236,56 @@
     <meta name="twitter:site" content="@novapro" />
     <meta name="twitter:title" content="NovaPro - Automation Services for B2B Clients" />
     <meta name="twitter:description" content="Optimize business processes, reduce costs, and increase profits with NovaPro's automation services." />
-    <meta name="twitter:image" content="/lovable-uploads/47840e42-e6db-4407-b1e9-692066daa9e0.png" />
+    <meta name="twitter:image" content="/images/WebSiteDevelopmen.jpeg" />
     
-    <link rel="icon" href="/lovable-uploads/5f1dc92f-caa1-4a20-a31d-1b8ce9061945.png" type="image/png">
+    <link rel="icon" href="/lovable-uploads/NovaProFavicon.png" type="image/png">
   </head>
 
   <body>
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+      (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+      m[i].l=1*new Date();
+      for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+      k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+      (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+      ym(101438464, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+      });
+    </script>
+    <noscript>
+      <div><img src="https://mc.yandex.ru/watch/101438464" style="position:absolute; left:-9999px;" alt="" /></div>
+    </noscript>
+    <!-- /Yandex.Metrika counter -->
+
     <div id="root"></div>
+
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+      (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+      m[i].l=1*new Date();
+      for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+      k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+      (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+      ym(101438464, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+      });
+    </script>
+    <noscript>
+      <div><img src="https://mc.yandex.ru/watch/101438464" style="position:absolute; left:-9999px;" alt="" /></div>
+    </noscript>
+    <!-- /Yandex.Metrika counter -->
+
+    <div id="root"></div>
+
     <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
     <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
     <script type="module" src="/src/main.tsx"></script>

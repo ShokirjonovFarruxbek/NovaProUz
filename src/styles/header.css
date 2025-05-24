@@ -1,0 +1,68 @@
+.our-services-btn {
+  padding: 12px 24px;
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  background: transparent;
+}
+
+.our-services-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.get-in-touch-btn {
+  padding: 12px 24px;
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: transparent;
+}
+
+.get-in-touch-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.get-in-touch-btn svg {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.3s ease;
+}
+
+.get-in-touch-btn:hover svg {
+  transform: translateX(4px);
+}
+
+.telegram-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  margin-left: 8px;
+}
+
+.telegram-btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.telegram-btn img {
+  width: 32px;
+  height: 32px;
+  transition: transform 0.3s ease;
+}
+
+.telegram-btn:hover img {
+  transform: scale(1.1);
+} 

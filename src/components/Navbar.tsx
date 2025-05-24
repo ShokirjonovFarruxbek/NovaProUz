@@ -1,16 +1,30 @@
-
 import { useState, useEffect } from 'react';
 import { Menu, X, Phone } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useLanguageStore } from '../stores/useLanguageStore';
 import { useTranslation } from '../translations';
 import { LanguageSelector } from './LanguageSelector';
+import '../styles/header.css';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const { currentLanguage } = useLanguageStore();
   const t = useTranslation(currentLanguage);
+  const navigate = useNavigate();
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
+  const handleLogoClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    navigate(`/${currentLanguage}`);
+    scrollToTop();
+  };
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -32,45 +46,61 @@ const Navbar = () => {
   }, []);
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-novapro-dark bg-opacity-95 shadow-md' : 'bg-transparent'
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-[#1C1C1F] ${
+      isScrolled ? 'shadow-md' : ''
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           <div className="flex items-center">
-            <Link to="/" className="flex items-center">
+            <Link to={`/${currentLanguage}`} className="flex items-center">
               <img 
-                src="/lovable-uploads/47840e42-e6db-4407-b1e9-692066daa9e0.png" 
+                src="/lovable-uploads/NovaProLogo.png" 
                 alt="NovaPro Logo" 
-                className="h-10 w-10 mr-2"
+                className="h-20 w-24"
               />
-              <span className="text-novapro-beige text-xl font-poppins font-semibold">NovaPro</span>
             </Link>
           </div>
           
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
-            <a href="#about" className="text-novapro-beige hover:text-novapro-teal transition-colors duration-300">{t.nav.about}</a>
-            <a href="#services" className="text-novapro-beige hover:text-novapro-teal transition-colors duration-300">{t.nav.services}</a>
-            <a href="#products" className="text-novapro-beige hover:text-novapro-teal transition-colors duration-300">{t.nav.products}</a>
-            <a href="#case-studies" className="text-novapro-beige hover:text-novapro-teal transition-colors duration-300">{t.nav.caseStudies}</a>
-            <a href="#blog" className="text-novapro-beige hover:text-novapro-teal transition-colors duration-300">{t.nav.blog}</a>
-            <a href="#contact" className="text-novapro-beige hover:text-novapro-teal transition-colors duration-300">{t.nav.contact}</a>
-            <a href="tel:+998901370997" className="flex items-center text-novapro-teal hover:text-novapro-beige transition-colors duration-300">
-              <Phone size={18} className="mr-2" />
-              +998 90 137 0997
-            </a>
+          <nav className="hidden md:flex items-center space-x-10">
+            <Link to={`/${currentLanguage}/about`} className="text-novapro-beige hover:text-novapro-teal transition-colors duration-300 text-lg">{t.nav.about}</Link>
+            <Link to={`/${currentLanguage}/services`} className="text-novapro-beige hover:text-novapro-teal transition-colors duration-300 text-lg">{t.nav.services}</Link>
+            <Link to={`/${currentLanguage}/products`} className="text-novapro-beige hover:text-novapro-teal transition-colors duration-300 text-lg">{t.nav.products}</Link>
+            <Link
+              to={`/${currentLanguage}/articles`}
+              className="text-novapro-beige hover:text-novapro-teal transition-colors duration-300 text-lg"
+            >
+              {currentLanguage === 'en' ? 'Articles' :
+               currentLanguage === 'ru' ? 'Статьи' :
+               'Maqolalar'}
+            </Link>
+            <Link
+              to={`/${currentLanguage}/case-studies`}
+              className="text-novapro-beige hover:text-novapro-teal transition-colors duration-300 text-lg"
+            >
+              {t.nav.caseStudies}
+            </Link>
+            <Link
+              to={`/${currentLanguage}/contact`}
+              className="text-novapro-beige hover:text-novapro-teal transition-colors duration-300 text-lg"
+            >
+              {t.nav.contact}
+            </Link>
+            <div className="flex items-center">
+              <Phone className="text-novapro-teal mr-2" size={22} />
+              <a href="tel:+998971380997" className="text-novapro-beige hover:text-novapro-teal transition-colors duration-300">+998 97 138 09 97</a>
+            </div>
             <LanguageSelector />
           </nav>
           
           {/* Mobile Navigation Button */}
-          <div className="md:hidden flex items-center gap-4">
-            <a href="tel:+998901370997" className="text-novapro-teal">
-              <Phone size={20} />
+          <div className="md:hidden flex items-center gap-6">
+            <a href="tel:+998971380997" className="text-novapro-teal">
+              <Phone size={24} />
             </a>
             <LanguageSelector />
             <button onClick={toggleMenu} className="text-novapro-beige">
-              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
             </button>
           </div>
         </div>
@@ -78,15 +108,35 @@ const Navbar = () => {
       
       {/* Mobile Navigation Menu */}
       {isMenuOpen && (
-        <div className="md:hidden bg-novapro-lightdark">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <a href="#about" className="block py-2 px-4 text-novapro-beige hover:text-novapro-teal" onClick={toggleMenu}>{t.nav.about}</a>
-            <a href="#services" className="block py-2 px-4 text-novapro-beige hover:text-novapro-teal" onClick={toggleMenu}>{t.nav.services}</a>
-            <a href="#products" className="block py-2 px-4 text-novapro-beige hover:text-novapro-teal" onClick={toggleMenu}>{t.nav.products}</a>
-            <a href="#case-studies" className="block py-2 px-4 text-novapro-beige hover:text-novapro-teal" onClick={toggleMenu}>{t.nav.caseStudies}</a>
-            <a href="#blog" className="block py-2 px-4 text-novapro-beige hover:text-novapro-teal" onClick={toggleMenu}>{t.nav.blog}</a>
-            <a href="#contact" className="block py-2 px-4 text-novapro-beige hover:text-novapro-teal" onClick={toggleMenu}>{t.nav.contact}</a>
-            <a href="tel:+998901370997" className="block py-2 px-4 text-novapro-teal hover:text-novapro-beige" onClick={toggleMenu}>+998 90 137 0997</a>
+        <div className="md:hidden bg-[#1C1C1F]">
+          <div className="px-4 pt-4 pb-6 space-y-2 sm:px-4">
+            <Link to={`/${currentLanguage}/about`} className="block py-3 px-4 text-novapro-beige hover:text-novapro-teal text-lg" onClick={toggleMenu}>{t.nav.about}</Link>
+            <Link to={`/${currentLanguage}/services`} className="block py-3 px-4 text-novapro-beige hover:text-novapro-teal text-lg" onClick={toggleMenu}>{t.nav.services}</Link>
+            <Link to={`/${currentLanguage}/products`} className="block py-3 px-4 text-novapro-beige hover:text-novapro-teal text-lg" onClick={toggleMenu}>{t.nav.products}</Link>
+            <Link 
+              to={`/${currentLanguage}/articles`}
+              className="block py-3 px-4 text-novapro-beige hover:text-novapro-teal text-lg"
+              onClick={toggleMenu}
+            >
+              {currentLanguage === 'en' ? 'Articles' :
+               currentLanguage === 'ru' ? 'Статьи' :
+               'Maqolalar'}
+            </Link>
+            <Link
+              to={`/${currentLanguage}/case-studies`}
+              className="block py-3 px-4 text-novapro-beige hover:text-novapro-teal text-lg"
+              onClick={toggleMenu}
+            >
+              {t.nav.caseStudies}
+            </Link>
+            <Link 
+              to={`/${currentLanguage}/contact`}
+              className="block py-3 px-4 text-novapro-beige hover:text-novapro-teal text-lg" 
+              onClick={toggleMenu}
+            >
+              {t.nav.contact}
+            </Link>
+            <a href="tel:+998971380997" className="block py-3 px-4 text-novapro-teal hover:text-novapro-beige text-lg" onClick={toggleMenu}>+998 97 138 09 97</a>
           </div>
         </div>
       )}

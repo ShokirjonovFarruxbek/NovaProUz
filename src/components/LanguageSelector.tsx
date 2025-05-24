@@ -1,5 +1,5 @@
-
 import { Globe } from 'lucide-react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -11,7 +11,21 @@ import { useLanguageStore } from '../stores/useLanguageStore';
 
 export const LanguageSelector = () => {
   const { currentLanguage, setLanguage } = useLanguageStore();
+  const navigate = useNavigate();
+  const location = useLocation();
   
+  const handleLanguageChange = (lang: string) => {
+    setLanguage(lang);
+    localStorage.setItem('language', lang);
+    
+    // Get current path without language prefix
+    const pathParts = location.pathname.split('/');
+    const pathWithoutLang = pathParts.length > 2 ? pathParts.slice(2).join('/') : '';
+    
+    // Navigate to the new language path
+    navigate(`/${lang}${pathWithoutLang ? '/' + pathWithoutLang : ''}`);
+  };
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger className="flex items-center gap-2 px-3 py-2 rounded-md hover:bg-novapro-lightdark transition-colors">
@@ -24,8 +38,12 @@ export const LanguageSelector = () => {
         {languages.map((language) => (
           <DropdownMenuItem
             key={language.code}
-            onClick={() => setLanguage(language.code)}
-            className="flex items-center gap-2 text-novapro-beige hover:text-novapro-teal hover:bg-novapro-dark cursor-pointer"
+            onClick={() => handleLanguageChange(language.code)}
+            className={`flex items-center gap-2 cursor-pointer ${
+              currentLanguage === language.code 
+                ? 'text-novapro-teal bg-novapro-dark'
+                : 'text-novapro-beige hover:text-novapro-teal hover:bg-novapro-dark'
+            }`}
           >
             <span>{language.flag}</span>
             <span>{language.name}</span>

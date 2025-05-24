@@ -1,4 +1,3 @@
-
 import { useParams, useNavigate } from 'react-router-dom';
 import { useLanguageStore } from '../stores/useLanguageStore';
 import { useTranslation } from '../translations';
@@ -54,7 +53,7 @@ const BlogPost = () => {
       <div className="section-container py-12">
         <Button 
           variant="outline" 
-          className="mb-8 text-novapro-beige hover:text-novapro-teal"
+          className="mb-8 text-novapro-beige hover:text-novapro-accent"
           onClick={() => navigate('/')}
         >
           <ArrowLeftIcon className="mr-2 h-4 w-4" />
@@ -77,8 +76,8 @@ const BlogPost = () => {
                   </CarouselItem>
                 ))}
               </CarouselContent>
-              <CarouselPrevious className="text-novapro-beige hover:text-novapro-teal ml-4" />
-              <CarouselNext className="text-novapro-beige hover:text-novapro-teal mr-4" />
+              <CarouselPrevious className="text-novapro-beige hover:text-novapro-accent ml-4" />
+              <CarouselNext className="text-novapro-beige hover:text-novapro-accent mr-4" />
             </Carousel>
           </div>
           

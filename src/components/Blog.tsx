@@ -1,77 +1,142 @@
-
-import { CalendarIcon, UserIcon, ArrowRightIcon } from 'lucide-react';
+import { FaCalendarAlt, FaUser, FaClock, FaArrowRight } from 'react-icons/fa';
 import { useLanguageStore } from '../stores/useLanguageStore';
 import { useTranslation } from '../translations';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 const Blog = () => {
   const { currentLanguage } = useLanguageStore();
   const t = useTranslation(currentLanguage);
+  const navigate = useNavigate();
+
+  const handleArticleClick = (postId: string) => {
+    navigate(`/blog/${postId}`);
+  };
 
   return (
-    <section id="blog" className="circuit-bg py-20">
-      <div className="section-container">
-        <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="section-title">{t.blog.title}</h2>
-          <p className="text-lg text-novapro-gray">
-            {t.blog.description}
-          </p>
-        </div>
-        
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <motion.section 
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: true }}
+      id="articles" 
+      className="py-20 bg-novapro-dark"
+    >
+      <div className="container mx-auto px-4">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="text-center mb-12"
+        >
+          <h2 className="text-3xl font-bold text-novapro-beige mb-4">{t.blog.title}</h2>
+          <p className="text-lg text-novapro-gray max-w-2xl mx-auto">{t.blog.description}</p>
+        </motion.div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {t.blog.posts.map((post, index) => (
-            <div key={index} className="card group overflow-hidden flex flex-col h-full">
-              <div className="h-48 overflow-hidden mb-6 -mx-6 -mt-6">
-                <img 
-                  src={index === 0 ? "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=2070" :
-                       index === 1 ? "https://images.unsplash.com/photo-1484417894907-623942c8ee29?auto=format&fit=crop&q=80&w=2070" :
-                       "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=2070"} 
-                  alt={post.title} 
-                  className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+            <motion.article
+              key={post.id}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              whileHover={{ scale: 1.02 }}
+              className="rounded-lg shadow-xl overflow-hidden hover:shadow-2xl transition-shadow duration-300 cursor-pointer border border-novapro-teal/20 hover:border-novapro-teal"
+              onClick={() => handleArticleClick(post.id)}
+            >
+              <motion.div 
+                whileHover={{ scale: 1.05 }}
+                className="h-48 overflow-hidden"
+              >
+                <img
+                  src={post.image || "/images/OurProducts.avif"}
+                  alt={post.title}
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.src = "/images/OurProducts.avif";
+                  }}
                 />
-              </div>
-              
-              <div className="flex-1">
-                <div className="flex items-center text-sm text-novapro-gray mb-3">
-                  <div className="flex items-center mr-4">
-                    <CalendarIcon size={14} className="mr-1" />
-                    <span>{post.date}</span>
-                  </div>
+              </motion.div>
+              <div className="p-6">
+                <motion.h3 
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                  viewport={{ once: true }}
+                  className="text-xl font-semibold text-white mb-2"
+                >
+                  {post.title}
+                </motion.h3>
+                <motion.p 
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.3 }}
+                  viewport={{ once: true }}
+                  className="text-gray-300 mb-4"
+                >
+                  {post.excerpt}
+                </motion.p>
+                <motion.div 
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.4 }}
+                  viewport={{ once: true }}
+                  className="flex items-center justify-between text-sm text-gray-400 mb-4"
+                >
                   <div className="flex items-center">
-                    <UserIcon size={14} className="mr-1" />
+                    <FaUser className="mr-2" />
                     <span>{post.author}</span>
                   </div>
-                </div>
-                
-                <h3 className="text-xl font-semibold mb-3 group-hover:text-novapro-teal transition-colors duration-300">
-                  {post.title}
-                </h3>
-                
-                <p className="text-novapro-gray mb-4">
-                  {post.excerpt}
-                </p>
-              </div>
-              
-              <div className="flex items-center justify-between mt-4">
-                <Link 
-                  to={`/blog/${index}`} 
-                  className="inline-flex items-center text-novapro-teal hover:underline"
+                  <div className="flex items-center">
+                    <FaCalendarAlt className="mr-2" />
+                    <span>{post.date}</span>
+                  </div>
+                </motion.div>
+                <motion.div 
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.5 }}
+                  viewport={{ once: true }}
+                  className="flex items-center justify-between"
                 >
-                  {t.blog.readMore} <ArrowRightIcon size={16} className="ml-2" />
-                </Link>
-                <span className="text-sm text-novapro-gray">{post.readTime} {t.blog.readTime}</span>
+                  <div className="flex items-center text-sm text-gray-400">
+                    <FaClock className="mr-2" />
+                    <span>{post.readTime} {t.blog.readTime}</span>
+                  </div>
+                  <motion.button 
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="text-novapro-teal hover:text-novapro-accent flex items-center"
+                  >
+                    {t.blog.readMore} <FaArrowRight className="ml-2" />
+                  </motion.button>
+                </motion.div>
               </div>
-            </div>
+            </motion.article>
           ))}
         </div>
-        
-        <div className="text-center mt-12">
-          <Link to="/blog" className="secondary-button">
+
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          viewport={{ once: true }}
+          className="text-center mt-12"
+        >
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={() => navigate('/blog')}
+            className="bg-novapro-teal hover:bg-novapro-accent text-white px-6 py-3 rounded-lg transition-colors duration-300"
+          >
             {t.blog.viewAll}
-          </Link>
-        </div>
+          </motion.button>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

@@ -1,0 +1,146 @@
+{
+  "common": {
+    "back": "Orqaga",
+    "learnMore": "Batafsil"
+  },
+  "products": {
+    "hrServices": {
+      "title": "HR Services",
+      "description": "Biznesingiz o'sishi uchun kompleks HR yechimlari",
+      "features": [
+        "To'liq rekruting jarayoni avtomatizatsiyasi",
+        "Xodimlarni raqamli adaptatsiyasi",
+        "Samaradorlikni kuzatish tizimlari",
+        "HR hujjatlarini avtomatlashtirish"
+      ]
+    },
+    "mySklad": {
+      "title": "MySklad",
+      "description": "Biznesni optimallashtirib, foydani raqamlarda ko'ring",
+      "features": [
+        "Real vaqtda inventarni kuzatish",
+        "Avtomatlashtirilgan hujjat ishlash",
+        "Savdo va xarid boshqaruvi",
+        "Tezkor foyda hisobotlari"
+      ]
+    },
+    "websiteDev": {
+      "title": "Veb-sayt yaratish",
+      "description": "Biznesingiz uchun zamonaviy texnologik yechimlar",
+      "features": [
+        "Zamonaviy va moslashuvchan dizayn",
+        "Qulay interfeys",
+        "SEO optimallashtirish",
+        "Kontent boshqaruv tizimi"
+      ]
+    }
+  },
+  "hrServices": {
+    "title": "HR Services",
+    "subtitle": "Biznesingiz o'sishi uchun kompleks HR yechimlari",
+    "problems": {
+      "title": "Qanday muammolarni hal qilamiz?",
+      "list": [
+        "Rekrutingga juda ko'p vaqt sarflayapsizmi?",
+        "Yuzlab rezyumelarni saralash va cheksiz suhbatlardan charchadingizmi?",
+        "Yangi xodimlar sinov muddatini o'tmayaptimi?",
+        "Yuqori kadrlar almashinuvi va past jamoa motivatsiyasimi?",
+        "HR tizimi kerak, lekin ishga tushirish uchun vaqt va resurslar yo'qmi?"
+      ]
+    },
+    "solutions": {
+      "title": "Biz nima qilamiz?",
+      "list": [
+        "To'liq rekruting jarayoni avtomatizatsiyasi",
+        "Xodimlarni raqamli adaptatsiyasi",
+        "Samaradorlikni kuzatish tizimlari",
+        "HR hujjatlarini avtomatlashtirish"
+      ]
+    },
+    "benefits": {
+      "title": "Biz bilan ishlash nima uchun qulay?",
+      "list": [
+        "Vaqtingizni tejang — siz biznes bilan shug'ullaning, biz odamlarni topamiz",
+        "Vakansiyalarni yopish — 2 kundan",
+        "Biznesingiz uchun HR audit va strategiya",
+        "Autsorsing formati — shtatga qabul qilmasdan"
+      ]
+    },
+    "finalStatement": {
+      "main": "Boshqalar qidirayotganda — siz allaqachon yollab bo'lgansiz.",
+      "sub": "Kafolatlangan natija bilan HR — bu biz."
+    }
+  },
+  "mySklad": {
+    "title": "MySklad",
+    "subtitle": "Biznesda tartib, foydani raqamlarda ko'ring",
+    "problems": {
+      "title": "Qanday muammolarni hal qilamiz?",
+      "list": [
+        "Inventar boshqaruvida tartibsizlikmi?",
+        "Hujjatlarni qo'lda ishlashmi?",
+        "Real vaqtdagi ma'lumotlar yo'qmi?",
+        "Murakkab hisobotlarmi?"
+      ]
+    },
+    "solutions": {
+      "title": "MySklad nimalar qila oladi?",
+      "list": [
+        "Avtomatlashtirilgan inventar boshqaruvi",
+        "Hujjat aylanishini avtomatlashtirish",
+        "Real vaqt tahlili",
+        "Mobil kirish"
+      ]
+    },
+    "implementation": {
+      "title": "Joriy qilish jarayoni",
+      "list": [
+        "1 kunda tezkor sozlash",
+        "Xodimlarni o'qitish",
+        "Texnik yordam",
+        "Muntazam yangilanishlar"
+      ]
+    },
+    "finalStatement": {
+      "main": "MySklad bilan biznesingizni optimallashitiring",
+      "sub": "Biznesda tartib, foydani raqamlarda ko'ring"
+    }
+  },
+  "websiteDev": {
+    "title": "Veb-sayt yaratish",
+    "subtitle": "Biznesingiz uchun ishlaydigan saytlar yaratamiz",
+    "problems": {
+      "title": "Qanday muammolarni hal qilamiz?",
+      "list": [
+        "Sayt yo'q — va sizni internetda topolmayaptilarmi?",
+        "Saytingiz bor, lekin u eskirgan, sotmayapti va sekinmi?",
+        "Noqulay interfeys yoki sekin yuklanish tufayli mijozlarni yo'qotyapsizmi?",
+        "Doimiy xatolar, dasturchi orqali tuzatishlar va admin panelda tartibsizlikmi?",
+        "Chiroyli va tez bo'lishini xohlaysizmi?"
+      ]
+    },
+    "solutions": {
+      "title": "Biz nima qilamiz?",
+      "list": [
+        "Zamonaviy, tez va qulay saytlarni 'kalit topshirish' usulida yaratamiz",
+        "Auditoriyangizga moslangan dizayn, 'hammadagidek' shablon emas",
+        "Barcha qurilmalar uchun moslashuvchan dizayn — telefondan Smart TV gacha",
+        "Oddiy admin panel — kontentni o'zingiz tahrirlashingiz mumkin"
+      ]
+    },
+    "benefits": {
+      "title": "Biz bilan ishlash nima uchun qulay?",
+      "list": [
+        "Vaqtingizni tejang — butun jarayonni o'z zimmamizga olamiz",
+        "Sayt 1-10 kunda — kechikishlar va cho'zilgan muddatlarsiz",
+        "Tayyor vositani olasiz, shunchaki 'hostingdagi fayl' emas",
+        "Ma'nolarni o'raymiz, shunchaki 'chiroyli rasm' emas",
+        "Saytdan savdo va lid generatsiya uchun qanday foydalanishni ko'rsatamiz"
+      ]
+    },
+    "finalStatement": {
+      "main": "Siz biznes bilan shug'ullaning — biz uni kuchaytiradigan sayt yaratamiz.",
+      "sub": "Zamonaviy. Qulay. Foydali."
+    }
+  }
+} 
